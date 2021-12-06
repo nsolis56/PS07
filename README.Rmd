@@ -1,0 +1,39 @@
+---
+title: "Babies!!" 
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Baby Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+library(ggplot2)
+library(dplyr)
+library(babynames)
+
+babynames %>% 
+  filter(name == "Minnie") %>% 
+  group_by(name)
+```
+
+## Baby Plot
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+ggplot(data = babynames, mapping = aes(x= year, y = prop, color = sex)) +
+geom_line() +
+scale_color_manual(values = c("#ee2c2c" , "#e3dac9")) +
+labs (x = "Year", y = "Proportion", title = "Minnie")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
